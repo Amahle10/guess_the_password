@@ -66,6 +66,12 @@ def correct_guess(guess, code):
 
 
 def give_clue(guess, code):
+    """this function gives the user clues
+
+    Args:
+        guess (string): the guess is the user input
+        code (string): the code
+    """
     
     found = []
     found_in_correct_position = []
@@ -87,7 +93,8 @@ def give_clue(guess, code):
 
     print("\n we found these exist: ",found, "\n and we found these: ",
         found_in_correct_position," in the correct place\n")
-    return False
+    
+    # return False
 
 
 def run_main(code):
