@@ -118,6 +118,7 @@ def give_clue(guess, code):
     # return False
 
 
+
 def run_main(code):
     """
     this function runs the the program logic
@@ -131,7 +132,11 @@ def run_main(code):
             print("game over!!!")
             break
         
-        user_input = get_user_input("Enter a number from 1 to 9 to guess code:\n")
+        user_input = get_user_input(f"Enter a number from 1 to {len(code)} to guess code:\n")
+        
+        # while len(user_input) > len(code):
+        #     print("incorrect len")
+        #     get_user_input(f"Enter a number from 1 to {len(code)} to guess code:\n")
         
         if correct_guess(user_input, code):
             print("YOU ARE IN!!!")
@@ -158,15 +163,31 @@ def game_opp():
 -hard\n"""
   
 
+def handle_level_input():
+    
+    
+    list_of_levels =  ["hard", "easy", "normal"]
+    while True:
+        get_game_level = get_user_input("Enter game level: ")
+        
+        if get_game_level in list_of_levels:
+            get_level = level(get_game_level)
+            return get_level
+            
+
+
+
 if __name__ == '__main__':
     
     print(game_opp())
     
-    game_level = get_user_input("Enter game level: ")
+    # game_level = get_user_input("Enter game level: ")
     
-    level = level(game_level)
+    # level = level(game_level)
     
-    code = code(level)
+    
+    
+    code = code(handle_level_input())
     print(code)
     run_main(code)
 
