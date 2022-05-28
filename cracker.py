@@ -6,6 +6,14 @@ import re
 
 
 def level(level):
+    """this is the function for indicating dificulty level
+
+    Args:
+        level (string): indicates the duficulty level { easy, normal, hard}
+
+    Returns:
+        (integer) : an integer  
+    """
     
     if level == "hard":
         print("you are on Hard mode")
@@ -18,6 +26,9 @@ def level(level):
     elif level == "normal":
         print("your are on normal mode")
         return 6
+    
+    else:
+        return False
         
 
 def code(size):
@@ -57,6 +68,16 @@ def validate_user_input(user_input):
 
 
 def correct_guess(guess, code):
+    """_summary_
+
+    Args:
+        guess (string): it is the guess/ user input 
+        code (string): the generated code/ random numbers
+
+    Returns:
+        _boolean: true if the code is equal to guess
+                - false if they are not 
+    """
     
     if(code == guess):
         return True
