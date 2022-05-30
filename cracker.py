@@ -132,7 +132,7 @@ def run_main(code):
             print("game over!!!")
             break
         
-        user_input = get_user_input(f"Enter a number from 1 to {len(code)} to guess code:\n")
+        user_input = get_user_input(f"Enter a four(4) digit code from range 1 to {len(code)} to guess code:\n")
         
         # while len(user_input) > len(code):
         #     print("incorrect len")
