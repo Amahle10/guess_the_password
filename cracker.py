@@ -177,7 +177,6 @@ if __name__ == '__main__':
     print(game_mode_prompt())
     
     code = code(handle_level_input())
-    print(code)
     run_main(code)
 
 
