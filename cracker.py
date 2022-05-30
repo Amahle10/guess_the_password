@@ -102,20 +102,22 @@ def give_clue(guess, code):
         if num in code:
             found.append(num)
     
-    for index, num in enumerate(guess):
+    if len(guess) == len(code):
+        for index, num in enumerate(guess):
         
-        if code[index] == guess[index]:
-            found_in_correct_position.append(num)
-            
-    if len(found) > 0:
-        print("we found something")
+            if code[index] == guess[index]:
+                found_in_correct_position.append(num)
+        if len(found) > 0:
+            print("we found something")
         
-    if len(found) > 0:
-        print("\n we found these exist: ",found)
-    if len(found_in_correct_position)> 0:
-        print( "\n and we found these: ",
-            found_in_correct_position," in the correct place\n")
-
+        if len(found) > 0:
+            print("\n we found these exist: ",found)
+        if len(found_in_correct_position)> 0:
+            print( "\n and we found these: ",
+                found_in_correct_position," in the correct place\n")
+    elif len(guess) != len(code):
+        print("-the length does not match!!!".upper())
+    
 
 def run_main(code):
     """
@@ -147,6 +149,9 @@ def run_main(code):
                     
         give_clue(user_input, code)
      
+  
+def game_mode_prompt():
+    
     return """Choose game level
 -easy
 -normal
@@ -175,6 +180,6 @@ if __name__ == '__main__':
     
     code = code(handle_level_input())
     run_main(code)
-    
+
 
 
