@@ -100,14 +100,12 @@ def give_clue(guess, code):
     
     for num in guess:
         if num in code:
-            # print("we found something")
             found.append(num)
     
     for index, num in enumerate(guess):
         
         if code[index] == guess[index]:
             found_in_correct_position.append(num)
-            # print("my boiii")
             
     if len(found) > 0:
         print("we found something")
@@ -132,11 +130,7 @@ def run_main(code):
             print("game over!!!")
             break
         
-        user_input = get_user_input(f"Enter a four(4) digit code from range 1 to {len(code)} to guess code:\n")
-        
-        # while len(user_input) > len(code):
-        #     print("incorrect len")
-        #     get_user_input(f"Enter a number from 1 to {len(code)} to guess code:\n")
+        user_input = get_user_input(f"Enter a {len(code)} digit code from range 1 to {len(code)} to guess code:\n")
         
         if correct_guess(user_input, code):
             print("YOU ARE IN!!!")
