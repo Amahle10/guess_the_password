@@ -147,9 +147,6 @@ def run_main(code):
                     
         give_clue(user_input, code)
      
-print("just testing my contribution")
-def game_mode_prompt():
-    
     return """Choose game level
 -easy
 -normal
