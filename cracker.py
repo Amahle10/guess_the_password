@@ -50,6 +50,7 @@ def get_user_input(prompt):
     """a simple function that takes input from terminal
     - returns the user input
     """
+    
     user_input = input(prompt)
     
     return user_input
@@ -108,15 +109,14 @@ def give_clue(guess, code):
             found_in_correct_position.append(num)
             # print("my boiii")
             
-    
     if len(found) > 0:
         print("we found something")
-
-    print("\n we found these exist: ",found, "\n and we found these: ",
-        found_in_correct_position," in the correct place\n")
-    
-    # return False
-
+        
+    if len(found) > 0:
+        print("\n we found these exist: ",found)
+    if len(found_in_correct_position)> 0:
+        print( "\n and we found these: ",
+            found_in_correct_position," in the correct place\n")
 
 
 def run_main(code):
@@ -154,8 +154,7 @@ def run_main(code):
         give_clue(user_input, code)
      
   
-  
-def game_opp():
+def game_mode_prompt():
     
     return """Choose game level
 -easy
@@ -164,7 +163,11 @@ def game_opp():
   
 
 def handle_level_input():
-    
+    """ handles the user input for game mode  
+
+    Returns:
+        _type_: _description_
+    """
     
     list_of_levels =  ["hard", "easy", "normal"]
     while True:
@@ -175,17 +178,9 @@ def handle_level_input():
             return get_level
             
 
-
-
 if __name__ == '__main__':
     
-    print(game_opp())
-    
-    # game_level = get_user_input("Enter game level: ")
-    
-    # level = level(game_level)
-    
-    
+    print(game_mode_prompt())
     
     code = code(handle_level_input())
     print(code)

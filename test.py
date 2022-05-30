@@ -24,7 +24,7 @@ class Test_hackman(unittest.TestCase):
         
         guess = "12345"
         actual_code = "12345"
-        check_guess_is_equal_to_pin = cracker.valid_guess(guess, actual_code)
+        check_guess_is_equal_to_pin = cracker.correct_guess(guess, actual_code)
         self.assertTrue(check_guess_is_equal_to_pin)
 
 
@@ -32,7 +32,7 @@ class Test_hackman(unittest.TestCase):
         
         guess = "12345"
         actual_code = "1234"
-        check_guess_is_equal_to_pin = cracker.valid_guess(guess, actual_code)
+        check_guess_is_equal_to_pin = cracker.correct_guess(guess, actual_code)
         self.assertFalse(check_guess_is_equal_to_pin)
         
         
@@ -41,7 +41,7 @@ class Test_hackman(unittest.TestCase):
         self.assertEquals("Choose game level\n"+
       "-easy\n"+
       "-normal\n"+
-      "-hard\n", cracker.game_opp())
+      "-hard\n", cracker.game_mode_prompt())
         
         
 if __name__ == '__main__':
